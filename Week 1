@@ -1,0 +1,31 @@
+package ECTE331;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import java.awt.Dimension;
+import java.awt.Graphics;
+import java.awt.Image;
+import java.io.File;
+import java.io.IOException;
+import javax.imageio.ImageIO;
+
+public class Project331 {
+
+      private static final int L = 255;
+
+      public static void histogramEqualization(int[] inpImage, int size, int[] outImage) throws IOException {
+            int[] histogram = new int[L];
+            int[] cumulativeHist = new int[L];
+
+            for (int i = 0; i < size; i++) {
+                  histogram[inpImage[i]]++;
+            }
+
+            cumulativeHist[0] = histogram[0];
+            for (int i = 1; i <= L; i++) {
+                  cumulativeHist[i] = cumulativeHist[i - 1] + histogram[i];
+            }
+
+            for (int i = 0; i < size; i++) {
+                  outImage[i] = (cumulativeHist[inpImage[i]] * (L)) / size;
+            }
+      }
