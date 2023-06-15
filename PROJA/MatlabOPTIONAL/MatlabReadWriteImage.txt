@@ -1,0 +1,9 @@
+1- Read the image file 'Elvis.png' and assign its pixels to the variable ImagePixels:
+ImagePixels=imread('Elvis.png');
+
+The instruction size(ImagePixels) gives the dimension of ImagePixels, i.e. [198, 254]
+
+
+2- To save a matrix A to an image file 'EnhancedElvis.png':
+
+imwrite(uint8(A), 'EnhancedElvis.png');

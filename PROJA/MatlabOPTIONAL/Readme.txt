@@ -1,0 +1,1 @@
+Please implement in Matlab the algorithm given in the appendix using 'Elvis.png' as the input image. Write the final result in a new image. The attached file MatlabReadWriteImage.txt gives the Matlab functions to use to read/write an image.
